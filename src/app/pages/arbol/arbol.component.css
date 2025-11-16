@@ -1,0 +1,43 @@
+.snow-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  top: -20px;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.snowflake svg {
+  display: block;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(120vh) rotate(360deg); opacity: 0.4; }
+}
+
+#arbol-container {
+  padding: 20px;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  min-width: 280px;
+  min-height: 350px;
+}
+
+.tree-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
