@@ -1,0 +1,46 @@
+<!-- ❄ COPOS DE NIEVE (tu efecto actual) -->
+<div class="snow-container">
+  <div
+    class="snowflake"
+    *ngFor="let s of snowflakes"
+    [style.left.%]="s.left"
+    [style.animation-duration.s]="s.duration"
+    [style.animation-delay.s]="s.delay"
+    [style.width.px]="s.size"
+    [style.height.px]="s.size"
+  >
+    <svg viewBox="0 0 24 24" fill="white">
+      <path
+        d="M12 2 L12 22 M4 6 L20 18 M4 18 L20 6"
+        stroke="white"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+</div>
+
+<!-- 🌟 LAYOUT PRINCIPAL -->
+<div
+  class="h-screen w-full flex flex-col justify-center items-center relative z-10 gap-6"
+>
+  <!-- Título -->
+  <h1 class="text-white text-4xl font-bold drop-shadow-lg">
+    Árbol Navideño Personalizado 🎄
+  </h1>
+
+  <!-- Input -->
+  <input
+    type="text"
+    [(ngModel)]="username"
+    class="px-4 py-2 w-64 rounded-md bg-gray-800 text-white border border-gray-600 focus:border-green-400 outline-none transition"
+    [attr.placeholder]="animatedPlaceholder"
+  />
+
+  <!-- Botón -->
+  <button
+    (click)="crearArbol()"
+    class="px-6 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg shadow-lg transition font-semibold"
+  >
+    Crear Árbol 🎄
+  </button>
+</div>

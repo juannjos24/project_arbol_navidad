@@ -1,7 +1,15 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
+// src/app/app.routes.ts
+import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { ArbolComponent } from './pages/arbol/arbol.component';
+
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'arbol/:username', component: ArbolComponent }
+];
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes)]
